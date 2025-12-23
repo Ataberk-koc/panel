@@ -33,6 +33,7 @@ class Slider extends Model
         'short_description',
         'url',
         'button_text',
+        'description',
     ];
 
     protected $casts = [

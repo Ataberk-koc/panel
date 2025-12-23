@@ -17,6 +17,8 @@ class Contact extends Model
         'schema',
         'status',
         'sort_order',
+        'name',
+        'message',
     ];
 
     protected $casts = [
@@ -26,7 +28,9 @@ class Contact extends Model
     protected $translatable = [
         'title',
         'description',
-        'schema' ,
+        'schema',
+        'name',
+        'message',
     ];
 
 }

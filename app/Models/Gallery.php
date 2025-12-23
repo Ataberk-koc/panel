@@ -18,11 +18,14 @@ class Gallery extends Model
         'gallery_photo',
         'status',
         'sort_order',
-
+        'title',
+        'description',
     ];
     public $translatable = [
         'gallery_title',
         'slug',
+        'title',
+        'description',
     ];
 
     protected $casts = [
