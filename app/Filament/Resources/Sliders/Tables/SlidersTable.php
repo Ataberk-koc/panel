@@ -18,6 +18,7 @@ class SlidersTable
             ->columns([
                 ImageColumn::make('desktop_image')
                     ->label(__('catalog.slider_image'))
+                    ->disk('public')
                     ->width(100)
                     ->height(100),
                 TextColumn::make('sort_order')
