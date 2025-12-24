@@ -105,5 +105,5 @@ return [
     'analytic_tracking_description'=>'Google Analytics, Google Tag Manager, Facebook Pixel gibi analitik ve takip ID\'lerinizi buraya ekleyin.',
     'private_codes_desc'=>'Web sitenizin başlık ve altbilgi bölümlerine eklemek istediğiniz özel kodları buraya yapıştırın.',
     'private_codes'=>'Özel Kodlar',
-    
+    'full_address'=>'Tam Adres',
 ];

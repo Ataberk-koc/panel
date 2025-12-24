@@ -20,6 +20,7 @@ class SettingsTable
                     ->sortable(),
                 ImageColumn::make('site_white_logo')
                     ->label('Site Beyaz Logo')
+                    ->disk('public')
                     ->sortable(),
             ])
             ->filters([

@@ -28,7 +28,7 @@ Route::get('/sss', [SSSController::class, 'index']);
 Route::get('/sss/{id}', [SSSController::class, 'show']);
 
 Route::get('/sliders', [SliderController::class, 'index']);
-Route::get('/sliders/{id}', [SliderController::class, 'show']);
+Route::get('/sliders/{slug}', [SliderController::class, 'show']);
 
 Route::get('/settings', [SettingController::class, 'index']);
 Route::get('/settings/{id}', [SettingController::class, 'show']);

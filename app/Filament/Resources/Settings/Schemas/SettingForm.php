@@ -11,10 +11,8 @@ use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Select;
 use Filament\Schemas\Components\Section;
-use Filament\Forms\Form;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
-use Illuminate\Support\Str;
 use Filament\Forms\Components\Repeater;
 use Filament\Schemas\Schema;
 
@@ -61,15 +59,19 @@ class SettingForm
                                 ->schema([
                                     FileUpload::make('site_white_logo')->label(__('catalog.white_logo'))
                                         ->helperText(__('catalog.white_logo_description'))
+                                        ->disk('public')
                                         ->directory('settings'),
                                     FileUpload::make('site_dark_logo')->label(__('catalog.black_logo'))
                                         ->helperText(__('catalog.black_logo_description'))
+                                        ->disk('public')
                                         ->directory('settings'),
                                     FileUpload::make('footer_icon')->label(__('catalog.footer_icon'))
                                         ->helperText(__('catalog.footer_icon_description'))
+                                        ->disk('public')
                                         ->directory('settings'),
                                     FileUpload::make('favicon')->label('Favicon')
                                         ->helperText(__('catalog.favicon_description'))
+                                        ->disk('public')
                                         ->directory('settings'),
                                 ]),
 
