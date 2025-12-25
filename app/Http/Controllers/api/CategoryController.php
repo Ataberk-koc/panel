@@ -9,10 +9,13 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+
     public function index()
     {
-        // Sadece aktif olanları getir
-        $categories = Category::where('is_active', true)->get();
+        // Sadece aktif olanları ve üst kategorisini getir
+        $categories = Category::where('is_active', true)
+            ->with('parent')
+            ->get();
 
         // Resource ile paketleyip yolla
         return CategoryResource::collection($categories);
@@ -22,6 +25,7 @@ class CategoryController extends Controller
     {
         $category = Category::where('is_active', true)
             ->where('slug->' . app()->getLocale(), $slug)
+            ->with('parent')
             ->firstOrFail();
         return new CategoryResource($category);
     }

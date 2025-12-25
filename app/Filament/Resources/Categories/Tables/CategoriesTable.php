@@ -20,7 +20,9 @@ class CategoriesTable
                 ImageColumn::make('banner')
                     ->label(__('catalog.banner_image'))
                     ->width(100)
-                    ->height(100),
+                    ->height(100)
+                    ->disk('public')
+                    ->url(fn ($record) => $record->banner ? asset('storage/' . $record->banner) : null),
                 TextColumn::make('title')
                     ->sortable()
                     ->searchable()

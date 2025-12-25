@@ -18,6 +18,7 @@ class PostResource extends JsonResource
             'content' => $this->getTranslation('content', $locale),
             'summary' => $this->getTranslation('summary', $locale),
             'image' => $this->image ? url('storage/' . $this->image) : null,
+            'banner' => $this->banner ? url('storage/' . $this->banner) : null,
             'is_active' => $this->is_active,
             'published_at' => $this->published_at,
             'categories' => $this->whenLoaded('categories', function () use ($request) {

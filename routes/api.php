@@ -34,13 +34,13 @@ Route::get('/settings', [SettingController::class, 'index']);
 Route::get('/settings/{id}', [SettingController::class, 'show']);
 
 Route::get('/sections', [SectionController::class, 'index']);
-Route::get('/sections/{id}', [SectionController::class, 'show']);
+Route::get('/sections/{slug}', [SectionController::class, 'show']);
 
 Route::get('/languages', [LanguageController::class, 'index']);
 Route::get('/languages/{id}', [LanguageController::class, 'show']);
 
 Route::get('/galleries', [GalleryController::class, 'index']);
-Route::get('/galleries/{id}', [GalleryController::class, 'show']);
+Route::get('/galleries/{slug}', [GalleryController::class, 'show']);
 
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/posts/{slug}', [PostController::class, 'show']);
@@ -49,4 +49,4 @@ Route::get('/tags', [TagController::class, 'index']);
 Route::get('/tags/{slug}', [TagController::class, 'show']);
 
 Route::get('/contacts', [ContactController::class, 'index']);
-Route::get('/contacts/{id}', [ContactController::class, 'show']);
+Route::get('/contacts/{slug}', [ContactController::class, 'show']);

@@ -49,9 +49,13 @@ class CategoryForm
 
                     FileUpload::make('banner')
                         ->label(__('catalog.banner_image'))
+                        ->disk('public')
+                        ->directory('categories/banners')
                         ->helperText(__('catalog.banner_helper')),
                     FileUpload::make('logo')
                         ->label(__('catalog.small_photo'))
+                        ->disk('public')
+                        ->directory('categories/logos')
                         ->helperText(__('catalog.smallphoto_helper')),
 
 

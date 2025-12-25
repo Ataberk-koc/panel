@@ -21,7 +21,9 @@ class PostForm
                     ->required(),
                 TextInput::make('slug')
                     ->required(),
-                TextInput::make('description'),
+                    \Filament\Forms\Components\Textarea::make('description')
+                        ->rows(5)
+                        ->columnSpanFull(),
                 TextInput::make('content')
                     ->required(),
                     \Filament\Forms\Components\Select::make('gallery_images')
@@ -58,6 +60,7 @@ class PostForm
                     ->default(0),
                     \Filament\Forms\Components\FileUpload::make('banner')
                         ->directory('banners')
+                        ->disk('public')
                         ->preserveFilenames(),
                 TextInput::make('meta_title'),
                 TextInput::make('meta_description'),
