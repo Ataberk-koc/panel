@@ -15,6 +15,7 @@ class PostResource extends JsonResource
             'id' => $this->id,
             'title' => $this->getTranslation('title', $locale),
             'slug' => $this->getTranslation('slug', $locale),
+            'description' => $this->getTranslation('description', $locale),
             'content' => $this->getTranslation('content', $locale),
             'summary' => $this->getTranslation('summary', $locale),
             'image' => $this->image ? url('storage/' . $this->image) : null,

@@ -12,6 +12,11 @@ class ContactResource extends JsonResource
         $locale = $request->header('Accept-Language', 'tr');
         return [
             'id' => $this->id,
+            'title' => $this->getTranslation('title', $locale),
+            'description' => $this->getTranslation('description', $locale),
+            'schema' => $this->getTranslation('schema', $locale),
+            'status' => $this->status,
+            'sort_order' => $this->sort_order,
             'name' => $this->getTranslation('name', $locale),
             'email' => $this->email,
             'phone' => $this->phone,

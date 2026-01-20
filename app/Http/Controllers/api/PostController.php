@@ -19,7 +19,11 @@ class PostController extends Controller
     {
         $post = Post::with(['categories', 'tags'])
             ->where('is_active', true)
-            ->where('slug->' . app()->getLocale(), $slug)
+            ->where(function($query) use ($slug) {
+                $query->whereJsonContains('slug->' . app()->getLocale(), $slug)
+                      ->orWhereJsonContains('slug->en', $slug)
+                      ->orWhereJsonContains('slug->tr', $slug);
+            })
             ->firstOrFail();
         return new PostResource($post);
     }
