@@ -20,11 +20,15 @@ class ContactForm
             ->components([
                 TextInput::make('title')
                     ->label(__('catalog.form_title'))
-                    ->markAsRequired()
+                    ->required()
+                    ->minLength(3)
+                    ->maxLength(255)
                     ->columnSpanFull(),
 
                 Textarea::make('description')
                     ->label(__('catalog.description'))
+                    ->minLength(5)
+                    ->maxLength(1000)
                     ->rows(3)
                     ->columnSpanFull(),
 
@@ -48,7 +52,9 @@ class ContactForm
 
                         TextInput::make('label')
                             ->label(__('catalog.name'))
-                            ->markAsRequired(),
+                            ->required()
+                            ->minLength(2)
+                            ->maxLength(100),
 
                         TextInput::make('placeholder')
                             ->label('Placeholder')
@@ -76,6 +82,7 @@ class ContactForm
                 TextInput::make('sort_order')
                     ->label(__('catalog.sort_order'))
                     ->numeric()
+                    ->minValue(0)
                     ->default(0),
             ]);
     }
